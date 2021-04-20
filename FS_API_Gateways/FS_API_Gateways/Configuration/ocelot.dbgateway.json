@@ -1,0 +1,22 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "dbgatewayapi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "ServiceName": "dbgateway",
+      "UpstreamPathTemplate": "/dbgateway/{everything}",
+      "UpstreamHttpMethod": [],
+      "SwaggerKey": "dbgateway",
+      "FileCacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "dbgatewaycaching"
+      }
+    }
+  ]
+}

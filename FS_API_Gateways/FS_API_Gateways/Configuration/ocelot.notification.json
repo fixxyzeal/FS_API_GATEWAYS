@@ -1,0 +1,22 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "notificationserviceapi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "ServiceName": "notification",
+      "UpstreamPathTemplate": "/notification/{everything}",
+      "UpstreamHttpMethod": [],
+      "SwaggerKey": "notification",
+      "FileCacheOptions": {
+        "TtlSeconds": 10,
+        "Region": "notificationcaching"
+      }
+    }
+  ]
+}

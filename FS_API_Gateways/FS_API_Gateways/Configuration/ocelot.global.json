@@ -1,0 +1,9 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://apigateways.herokuapp.com",
+    "ServiceDiscoveryProvider": {
+      "Type": "AppConfiguration",
+      "PollingIntervalSeconds": 10000
+    }
+  }
+}
