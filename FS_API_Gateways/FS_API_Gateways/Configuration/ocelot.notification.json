@@ -11,8 +11,12 @@
       ],
       "ServiceName": "notification",
       "UpstreamPathTemplate": "/notification/{everything}",
-      "UpstreamHttpMethod": [],
+      "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "notification",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": []
+      },
       "FileCacheOptions": {
         "TtlSeconds": 10,
         "Region": "notificationcaching"

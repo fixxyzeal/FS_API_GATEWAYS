@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace FS_API_Gateways
 {
@@ -30,6 +32,28 @@ namespace FS_API_Gateways
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Add JWT
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("SECRET")));
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidIssuer = "FS",
+                ValidateAudience = true,
+                ValidAudience = "FS Studio",
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true,
+            };
+
+            services.AddAuthentication()
+                    .AddJwtBearer("IdentityApiKey", x =>
+                    {
+                        x.RequireHttpsMetadata = false;
+                        x.TokenValidationParameters = tokenValidationParameters;
+                    });
+
             services.AddOcelot()
                 .AddAppConfiguration()
                 .AddCacheManager(option => option.WithDictionaryHandle());
