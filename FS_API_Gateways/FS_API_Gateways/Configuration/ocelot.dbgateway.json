@@ -9,7 +9,7 @@
           "Port": 443
         }
       ],
-      "ServiceName": "dbgateway",
+      //"ServiceName": "dbgateway",
       "UpstreamPathTemplate": "/dbgateway/{everything}",
       "UpstreamHttpMethod": [],
       "SwaggerKey": "dbgateway",

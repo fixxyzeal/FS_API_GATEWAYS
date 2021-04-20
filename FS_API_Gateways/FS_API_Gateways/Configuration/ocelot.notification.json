@@ -9,7 +9,7 @@
           "Port": 443
         }
       ],
-      "ServiceName": "notification",
+      //"ServiceName": "notification",
       "UpstreamPathTemplate": "/notification/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "notification",

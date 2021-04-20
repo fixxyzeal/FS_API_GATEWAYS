@@ -4,7 +4,7 @@
       "Key": "dbgateway",
       "Config": [
         {
-          "Name": "DBgateway API",
+          "Name": "FS_DB_GatewayAPI",
           "Version": "v1",
           "Url": "https://dbgatewayapi.herokuapp.com/swagger/v1/swagger.json"
         }
