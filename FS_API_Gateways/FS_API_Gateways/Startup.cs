@@ -54,6 +54,17 @@ namespace FS_API_Gateways
                         x.TokenValidationParameters = tokenValidationParameters;
                     });
 
+            //Add Cors
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
+            });
+
             services.AddOcelot()
                 .AddAppConfiguration()
                 .AddCacheManager(option => option.WithDictionaryHandle());
@@ -77,6 +88,8 @@ namespace FS_API_Gateways
             app.UseHealthChecks("/hc");
 
             app.UseSwagger();
+
+            app.UseCors("CorsPolicy");
 
             app.UseStaticFiles();
 

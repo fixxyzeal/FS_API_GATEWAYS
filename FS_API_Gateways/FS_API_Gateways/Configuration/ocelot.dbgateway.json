@@ -13,10 +13,6 @@
       "UpstreamPathTemplate": "/dbgateway/{everything}",
       "UpstreamHttpMethod": [],
       "SwaggerKey": "dbgateway",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "IdentityApiKey",
-        "AllowedScopes": []
-      },
       "FileCacheOptions": {
         "TtlSeconds": 10,
         "Region": "dbgatewaycaching"
